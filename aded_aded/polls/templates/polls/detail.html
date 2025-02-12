@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgba(174, 233, 243, 0.267);
+            color: rgb(17, 19, 18) 13);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+        }
+        h1 ,h2 {
+            text-align: center;
+        }
+    </style>  
+    <title>{{ question.question_text }}</title>
+</head>
+<body>
+    <h1>{{ question.question_text }}</h1>
+    <form action="{% url 'polls:vote' question.id %}" method="post">
+        {% csrf_token %}
+        {% for choice in question.choice_set.all %}
+            <input type="radio" name="choice" value="{{ choice.id }}"> {{ choice.choice_text }}<br>
+        {% endfor %}
+        <button type="submit">Vote</button>
+    </form>
+</body>
+</html>

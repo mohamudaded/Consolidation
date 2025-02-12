@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ one_post.title }}</title>
+    </head>
+    <body>
+        <h1>{{ one_post.title }}</h1>
+        <p><strong>By:</strong>{{ one_post.author }}</p>
+        <p><strong>Published on:</strong>{{ one_post.published_date }}</p>
+
+        <section>
+            <hr>
+            {{ one_post.content }}
+            <hr>
+        </section>
+    </body>
+</html>
