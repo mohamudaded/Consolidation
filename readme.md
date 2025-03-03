@@ -68,3 +68,25 @@ cd docs
 make html
 ```
 Then, open `docs/build/html/index.html` in a web browser.
+
+
+
+### **Build the Docker Image**
+
+In the terminal, navigate to the root of your Django project and run the following command to build the Docker image:
+
+```sh
+docker build -t my-django-app .
+```
+
+### **Run the Docker Container**
+
+Once the image is built, you can run the container by using the following command:
+
+```sh
+docker run -p 8000:8000 my-django-app
+```
+
+This will start the Django development server inside the container and bind it to port 8000 on your local machine. You can access the app at `http://localhost:8000/`.
+
+---
